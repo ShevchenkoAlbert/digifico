@@ -1,0 +1,41 @@
+<div class="publication-edit">
+    <p-card header="Publication edit">
+        <form [formGroup]="editForm">
+            <div class="p-fluid">
+                <ng-container *ngFor="let control of metaData">
+                    <ng-container [ngSwitch]="control.type">
+                        <div class="control" *ngSwitchCase="'string'">
+                        <input
+                            type="text"
+                            pInputText
+                            [formControlName]="control.fieldCode"
+                            [placeholder]="control.placeholderTxt"
+                        >
+                        <small class="p-invalid" *ngIf="isRequired(control.fieldCode)">
+                            This field is required
+                        </small>
+                        </div>
+                        <div class="control" *ngSwitchCase="'text'">
+                        <textarea
+                            [rows]="3"
+                            pInputTextarea
+                            autoResize="autoResize"
+                            [formControlName]="control.fieldCode"
+                            [placeholder]="control.placeholderTxt"
+                        ></textarea>
+                        <small class="p-invalid" *ngIf="isRequired(control.fieldCode)">
+                            This field is required
+                        </small>
+                        </div>
+                    </ng-container>
+                </ng-container>
+            </div>
+        </form>
+        <div class="button-control">
+            <p-button
+                (click)="save()"
+                [disabled]="editForm.invalid"
+            >Save</p-button>
+        </div>
+    </p-card>
+</div>

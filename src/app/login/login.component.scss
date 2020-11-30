@@ -1,0 +1,38 @@
+:host {
+    background: #f0f5fc;
+
+    .login {
+        width: 500px;
+        margin: 0 auto;
+
+        .form-control {
+            margin-bottom: 16px;
+
+            label {
+                font-size: 14px;
+                line-height: 20px;
+                font-weight: 700;
+                margin-bottom: 4px;
+                display: flex;
+            }
+
+            input {
+                border: 1px solid #f4f4f4;
+                border-radius: 4px;
+                display: flex;
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+
+        .form-button {
+            display: flex;
+            justify-content: center;
+            .p-button {
+                background: #277dff;
+            }
+        }
+    };
+
+
+}

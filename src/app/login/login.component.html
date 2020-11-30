@@ -1,0 +1,40 @@
+<div class="login">
+    <p-card header="Sign In">
+        <form [formGroup]="loginForm">
+            <div class="p-fluid">
+                <div class="form-control">
+                    <label for="email">Email</label>
+                    <input
+                        type="text"
+                        id="email"
+                        pInputText
+                        [autocomplete]="false"
+                        formControlName="email"
+                    />
+                    <ng-container *ngIf="isControlInvalid('email')">
+                        <small class="p-invalid" *ngIf="email.errors.required">Email field is required</small>
+                        <small
+                            class="p-invalid"
+                            *ngIf="email.errors.pattern && !email.errors.required"
+                        >Email field is not correct</small>
+                    </ng-container>
+                </div>
+                <div class="form-control">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        pInputText
+                        formControlName="password"
+                    />
+                    <ng-container *ngIf="isControlInvalid('password')">
+                        <small class="p-invalid" *ngIf="password.errors.required">Password is required</small>
+                    </ng-container>
+                </div>
+            </div>
+        </form>
+        <div class="form-button">
+            <p-button (click)="login()">Login</p-button>
+        </div>
+    </p-card>
+</div>

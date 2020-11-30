@@ -1,0 +1,21 @@
+:host {
+    .publication-edit {
+        .control {
+            margin-bottom: 16px;
+
+            input, textarea {
+                border: 1px solid #f4f4f4;
+                border-radius: 4px;
+                display: flex;
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+
+        .button-control {
+            .p-button {
+                background: #277dff !important;
+            }
+        }
+    }
+}
